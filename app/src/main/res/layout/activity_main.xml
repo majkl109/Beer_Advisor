@@ -27,6 +27,13 @@
         android:text="@string/find_beer"
         android:onClick="onClickFindBeer"/>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="4dp"
+        card_view:cardElevation="2dp"
+
+
     <TextView
         android:id="@+id/brands"
         android:layout_width="wrap_content"
