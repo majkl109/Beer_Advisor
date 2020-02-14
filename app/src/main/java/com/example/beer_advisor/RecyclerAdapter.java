@@ -1,5 +1,6 @@
 package com.example.beer_advisor;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,15 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter {
 
+    private int[] images;
+    public RecyclerAdapter(int[] images){
+        this.images = images;
+    }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext().inflate(R.layout.album_layout,parent))
+        ImageViewHolder imageViewHolder = new ImageViewHolder(view);
+
+        return imageViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
 
     }
 
@@ -33,7 +41,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
         public ImageViewHoler(View itemView){
             super(itemView);
-            Album = itemView.
+            Album = itemView.findViewById(R.id.album);
+            AlbumTitle = itemView.findViewById(R.album_title);
         }
 
     }
