@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ImageViewHolder> {
 
     private int[] images;
     public RecyclerAdapter(int[] images){
@@ -16,8 +16,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<> {
 
 
     @Override
-    public Ima.onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext().inflate(R.layout.album_layout,parent))
+    public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_layout,parent,false);
         ImageViewHolder imageViewHolder = new ImageViewHolder(view);
 
         return imageViewHolder;
@@ -36,12 +36,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<> {
     public int getItemCount() {
         return images.length;
     }
-    public static ImageViewHolder extends RecyclerView.ViewHolder{
+    public static class ImageViewHolder extends RecyclerView.ViewHolder{
 
         ImageView Album;
         TextView AlbumTitle;
 
-        public ImageViewHoler(View itemView){
+        public ImageViewHolder(View itemView){
             super(itemView);
             Album = itemView.findViewById(R.id.album);
             AlbumTitle = itemView.findViewById(R.id.album_title);
