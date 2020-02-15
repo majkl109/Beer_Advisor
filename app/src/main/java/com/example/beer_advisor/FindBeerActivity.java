@@ -3,6 +3,7 @@ package com.example.beer_advisor;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -23,7 +24,7 @@ public class FindBeerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(this, 2);
+        layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new RecyclerAdapter(images);
