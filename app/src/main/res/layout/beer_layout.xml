@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:src="@drawable/bura"
         android:scaleType="fitXY"
-        android:id="@+id/album"
+        android:id="@+id/beer"
         />
     <TextView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:gravity="center"
         android:textSize="18dp"
         android:textStyle="bold"
-        android:id="@+id/album_title"
+        android:id="@+id/beer_name"
         />
 
 </LinearLayout>
