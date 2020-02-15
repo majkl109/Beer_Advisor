@@ -43,8 +43,8 @@ public class FindBeerActivity extends AppCompatActivity implements RecyclerAdapt
     }
     @Override
     public void onItemClick(View view, int position){
-        Toast.makeText(this, "You clicked" + adapter.getItem(position)
-                + "on item position " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "You clicked " + adapter.getItem(position)
+                + " on item position " + position, Toast.LENGTH_SHORT).show();
     }
 
 }
