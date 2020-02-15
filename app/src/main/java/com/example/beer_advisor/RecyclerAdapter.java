@@ -57,9 +57,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ImageV
             itemView.setOnClickListener(this);
         }
         @Override
-        public void onClick(View view) {
-            if (bClickListener != null) bClickListener.onItemClick(view, getAdapterPosition());
-          }
+        public void onClick(View view){
+            if(bClickListener != null) bClickListener.onItemClick(view,getAdapterPosition());
+         }
         }
         public String getItem(int id){
             return beerNames.get(id);
