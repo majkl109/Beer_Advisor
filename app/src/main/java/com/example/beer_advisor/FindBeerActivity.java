@@ -15,12 +15,19 @@ import java.util.ArrayList;
 public class FindBeerActivity extends AppCompatActivity implements RecyclerAdapter.ItemClickListener {
 
     private RecyclerAdapter adapter;
-
+    private int[] images = {R.drawable.bura, R.drawable.neposlusna, R.drawable.osjecko,
+            R.drawable.ozujsko, R.drawable.ozujsko_amber, R.drawable.pan};
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ArrayList<Integer> beerView = new ArrayList<>();
+        beerView.add(images[1]);
+        beerView.add(images[2]);
+        beerView.add(images[3]);
+        beerView.add(images[4]);
+        beerView.add(images[5]);
+        beerView.add(images[6]);
 
         ArrayList<String> beerNames = new ArrayList<>();
         beerNames.add("Bura");
@@ -33,7 +40,7 @@ public class FindBeerActivity extends AppCompatActivity implements RecyclerAdapt
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(verticalLayoutManager);
-        adapter = new RecyclerAdapter(this, viewBers, beerNames);
+        adapter = new RecyclerAdapter(this, beerNames);
         adapter = new RecyclerAdapter(images);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);

@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -26,17 +28,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ImageV
 
 
     @Override
-    public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = bInflater.inflate(R.layout.beer_layout,parent,false);
         return new ImageViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ImageViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
 
         int beer = beerViews.get(position);
         String nameOfBeer = beerNames.get(position);
-        holder.myImageView.setImage(beer);
+        holder.myImageView.setImageResource(beer);
         holder.myTextView.setText(nameOfBeer);
 
     }
@@ -47,10 +50,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ImageV
     }
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        View myImageView;
+        ImageView myImageView;
         TextView myTextView;
 
-        public ImageViewHolder(View itemView){
+        ImageViewHolder(View itemView){
             super(itemView);
             myImageView = itemView.findViewById(R.id.beer);
             myTextView = itemView.findViewById(R.id.beer_name);
